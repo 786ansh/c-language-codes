@@ -1,0 +1,329 @@
+// string programs 
+#include <stdio.h>
+#include<string.h>
+c program to find the length of string
+#include <stdio.h>
+  int
+main ()
+{
+  char s[50];
+  fgets (s, 100, stdin);
+  int c = 0;
+  for (int i = 0; s[i] != '\0'; i++)
+    {
+      c++;
+    }
+  printf ("%d", c - 1);
+}
+
+
+c program to copy one string to the other string
+#include <stdio.h>
+  int
+main ()
+{
+  char s[50];
+  char p[50];
+  fgets (s, 100, stdin);
+  int i;
+  for (i = 0; s[i] != '\0'; i++)
+    {
+      p[i] = s[i];
+    }
+  p[i] = '\0';
+  for (int i = 0; p[i] != '\0'; i++)
+    printf ("%c", p[i]);
+}
+
+c program to concatenate 2 strings
+#include <stdio.h>
+  int
+main ()
+{
+  char s[2 * 50];
+  char p[50];
+  fgets (s, 100, stdin);
+  int j;
+  fgets (p, 100, stdin);
+  int c = 0;
+  for (int i = 0; s[i] != '\0'; i++)
+    c++;
+  for (j = 0; p[j] != 0; j++, c++)
+    s[c] = p[j];
+  printf ("%s", s);
+}
+
+c program to compare 2 strings
+#include <stdio.h>
+  int
+main ()
+{
+  char s[100];
+  char p[100];
+  fgets (s, 10, stdin);
+  fgets (p, 10, stdin);
+  int e = strlen (s);
+  int f = strlen (p);
+  int min = (e < f ? e : f);
+  int flag = 1;
+  for (int i = 0; i < min; i++)
+    {
+      if (s[i] != p[i])
+	{
+	  flag = 0;
+	  break;
+	}
+    }
+  if (flag == 0)
+    printf ("they are not eqaul\n");
+  else
+    printf ("they are eqaul\n");
+}
+
+cprogram to convert lowercase string to the uppercase
+#include <stdio.h>
+  int main ()
+{
+  char s[100];
+  fgets (s, 50, stdin);
+  for (int i = 0; s[i] != '\0'; i++)
+    {
+      if (s[i] >= 97 && s[i] <= 122)
+	printf ("%c", s[i] - 32);
+      else
+	printf ("%c", s[i]);
+    }
+}
+
+c program to convert uppercase string to lowercase
+#include <stdio.h>
+  int
+main ()
+{
+  char s[100];
+  fgets (s, 100, stdin);
+  for (int i = 0; s[i] != '\0'; i++)
+    {
+      if (s[i] >= 65 && s[i] <= 90)
+	printf ("%c", s[i] + 32);
+      else
+	printf ("%c", s[i]);
+    }
+}
+
+c program to toggle the string (i.e convert uppercase to lowercase and vice versa)
+#include <stdio.h>
+     int main ()
+{
+  char s[100];
+  fgets (s, 50, stdin);
+  for (int i = 0; s[i] != '\0'; i++)
+    {
+      if (s[i] >= 65 && s[i] <= 90)
+	printf ("%c", s[i] + 32);
+      else if (s[i] >= 97 && s[i] <= 122)
+	printf ("%c", s[i] - 32);
+    }
+}
+
+c program to fid the number of alphabets, numbers and special characters
+
+#include <stdio.h>int
+main ()
+{
+  char s[100];
+  fgets (s, 50, stdin);
+  int a = 0, i = 0, sp = 0;
+  for (int i = 0; s[i] != '\0'; i++)
+    {
+      if (s[i] >= 65 && s[i] <= 90 || s[i] >= 97 && s[i] <= 122)
+	a++;
+      else if (s[i] >= '0' && s[i] <= '9')
+	i++;
+      else if (s[i] == '\0')
+	continue;
+      else
+	sp++;
+    }
+  printf
+    ("no of alphabets are%d\n no of integers are %d\n no of special characters are%d \n",
+     a, i, sp);
+}
+
+c program to find the total number of vowels and consonant
+#include <stdio.h>
+int
+main ()
+{
+  char s[100];
+  fgets (s, 100, stdin);
+  int v = 0, c = 0;
+  for (int i = 0; s[i] != '\0'; i++)
+    {
+      char u = s[i];
+      if (u == 'a' || u == 'e' || u == 'i' || u == 'o' || u == 'u')
+	v++;
+      else
+	c++;
+    }
+  printf ("no of vowels are %d\n no of consonant are%d", v, c);
+}
+
+c program to find the no of words in a string
+#include <stdio.h>
+int
+main ()
+{
+  char s[100];
+  fgets (s, 100, stdin);
+  int c = 0;
+  for (int i = 0; s[i] != '\0'; i++)
+    {
+      if (s[i] == 32)
+	c++;
+    }
+  printf ("no of words are%d\n", c + 1);
+}
+
+c program to reverse a string 
+#include <stdio.h>
+int
+main ()
+{
+  char s[100];
+  int c = 0;
+  int j;
+  fgets (s, 100, stdin);
+  for (int i = 0; s[i] != '\0'; i++)
+    c++;
+  int flag = 1;
+  c = c - 1;
+  printf ("%d\n", c);
+  for (j = 0; j < c; j++)
+    {
+      if (s[j] != s[c - 1 - j])
+	{
+	  flag = 0;
+	  break;
+	}
+    }
+  if (flag == 1)
+    printf ("palindrone");
+  else
+    printf ("ye palindrome nahi hai \n");
+}
+
+
+
+c program to find the first occurences of a character in a string 
+#include <stdio.h>
+int
+main ()
+{
+  char s[100];
+  fgets (s, 100, stdin);
+  char a;
+  printf ("enter any character that u wanna find \n");
+  scanf ("%c", &a);
+  int i;
+  char t;
+  for (i = 0; s[i] != '\0'; i++)
+    {
+      if (s[i] == a)
+	{
+	  t = i;
+	  break;
+	}
+    }
+  printf ("it is present at index%d", t);
+}
+
+c program to find the last ocurrence of any character 
+#include <stdio.h>
+int
+main ()
+{
+  char s[100];
+  fgets (s, 100, stdin);
+  char a;
+  printf ("enter the character  that u want to find \n");
+  scanf ("%c", &a);
+  int i;
+  int t;
+  for (i = 0; s[i] != '\0'; i++)
+    {
+      if (s[i] == a)
+	{
+	  t = i;
+	}
+    }
+  printf ("it's last occurence is on index%d", t);
+}
+
+c program to count all occurence of a charcter
+#include <stdio.h>
+int
+main ()
+{
+  char s[100];
+  char a;
+  fgets (s, 100, stdin);
+  scanf ("%c", &a);
+  int i, k;
+  int c = 1;
+  for (i = 0; s[i] != '\0'; i++)
+    {
+      if (s[i] == a)
+	{
+	  printf ("%d- ocuurence is at%d\n", c, i);
+	  c++;
+	}
+    }
+}
+
+c program to count all the occurences of a charcter 
+#include <stdio.h>
+int
+main ()
+{
+  char s[100];
+  char a;
+  fgets (s, 100, stdin);
+  scanf ("%c", &a);
+  int c = 0;
+  for (int i = 0; s[i] != '\0'; i++)
+    {
+      if (s[i] == a)
+	c++;
+    }
+  printf ("no of %c is %d", a, c);
+}
+
+
+c program to remove the first occurence of a given character
+#include <stdio.h>
+int
+main ()
+{
+  char s[100];
+  printf ("enter the string\n");
+  fgets (s, 100, stdin);
+  int i, j, k;
+  int l = strlen (s);
+  char u;
+  l--;
+  printf ("enter the chracter \n");
+  scanf ("%c", &u);
+  for (i = 0; i < l; i++)
+    {
+      if (s[i] == u)
+	{
+	  for (j = i; j < l; j++)
+	    s[j] = s[j + 1];
+	  l--;
+	  i--;
+	  break;
+	}
+    }
+  puts (s);
+}
